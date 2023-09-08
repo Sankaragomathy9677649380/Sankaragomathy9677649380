@@ -1,16 +1,12 @@
-def factorial(n):
-    if n == 0:
-        return 1
+def is_leap_year(year):
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
     else:
-        return n * factorial(n-1)
+        return False
 
-# Input from the user
-num = int(input("Enter a non-negative integer: "))
+year = int(input("Enter a year: "))
 
-if num < 0:
-    print("Factorial is not defined for negative numbers.")
-elif num == 0:
-    print("The factorial of 0 is 1.")
+if is_leap_year(year):
+    print(f"{year} is a leap year.")
 else:
-    result = factorial(num)
-    print(f"The factorial of {num} is {result}.")
+    print(f"{year} is not a leap year.")
